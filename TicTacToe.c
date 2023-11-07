@@ -6,8 +6,6 @@
 char board[3][3];
 const char PLAYER = 'X';
 const char PLAYER2 = 'O';
-const char COMPUTER = 'O';
-
 
 void reset_board();
 void print_board();
@@ -21,9 +19,6 @@ void print_winner(char winner);
 int main()
 {
     char winner = ' ';
-    printf("Single player or Multipleyer? 1 - Single player. 2 -  Multipleyer\n");
-    int chose;
-    scanf("%d", &chose);
     reset_board();
     while(winner == ' ' && check_free_spaces() != 0)
     {
@@ -35,10 +30,7 @@ int main()
             break;
         }
         print_board();
-        if (chose == 1)
-            computer_move();
-        else 
-            player2_move();
+        player2_move();
         winner = check_winner();
         if (winner != ' ' || check_free_spaces() == 0)
         {
