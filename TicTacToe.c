@@ -14,7 +14,6 @@ void print_board();
 int check_free_spaces();
 void player_move();
 void player2_move();
-void computer_move();
 char check_winner();
 void print_winner(char winner);
 
@@ -111,11 +110,6 @@ void player_move()
     while(board[x][y] != ' ');
 }
 
-void computer_move()
-{
-    int x, y;
-    srand(time(NULL));
-}
 void player2_move()
 {
     int x, y;
